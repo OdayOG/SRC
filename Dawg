@@ -1,0 +1,22 @@
+alm_tekst = "I gætter aldrig min hemmelige besked!"
+
+def krypter_caesar(alm_tekst):
+    krypteret_tekst = ""
+    for karakter in alm_tekst:
+        utf_nummer = ord(karakter)
+        nyt_uft_nummer = utf_nummer + 1
+        krypteret_tekst += chr(nyt_uft_nummer)
+    return krypteret_tekst
+
+def dekrypter_caesar(krypteret_tekst):
+    dekrypteret_tekst = ""
+    for karakter in krypteret_tekst:
+        utf_nummer = ord(karakter)
+        nyt_uft_nummer = utf_nummer - 1
+        dekrypteret_tekst += chr(nyt_uft_nummer)
+    return dekrypteret_tekst
+
+krypteret_tekst = krypter_caesar(alm_tekst)
+print(krypteret_tekst)
+dekrypteret_tekst = dekrypter_caesar(krypteret_tekst)
+print(dekrypteret_tekst)
